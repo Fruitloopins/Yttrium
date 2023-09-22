@@ -3,7 +3,7 @@
   "id": "yttrium",
   "version": "${version}",
   "name": "Yttrium",
-  "description": "An assortment of toggleable client-side tweaks",
+  "description": "Client-sided Fabric mod that adds useful tweaks",
   "authors": [
     "Fruitloopins"
   ],
