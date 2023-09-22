@@ -1,4 +1,4 @@
-package com.fwloopins.amanita.client.config;
+package com.fwloopins.yttrium.client.config;
 
 import me.shedaniel.autoconfig.AutoConfig;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -12,16 +12,16 @@ public class ConfigScreen {
 
     public static void createConfigKeybind() {
         configKeyBind = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                "key.Amanita.config",
+                "key.Yttrium.config",
                 InputUtil.Type.KEYSYM,
-                GLFW.GLFW_KEY_F10,
-                "category.Amanita"
+                GLFW.GLFW_KEY_F9,
+                "category.Yttrium"
         ));
     }
 
     public static void configScreenTick(MinecraftClient client) {
         while (configKeyBind.wasPressed()) {
-            client.setScreen(AutoConfig.getConfigScreen(AmanitaConfig.class, client.currentScreen).get());
+            client.setScreen(AutoConfig.getConfigScreen(YttriumConfig.class, client.currentScreen).get());
         }
     }
 }

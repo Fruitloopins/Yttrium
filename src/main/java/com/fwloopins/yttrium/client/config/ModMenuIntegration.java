@@ -1,4 +1,4 @@
-package com.fwloopins.amanita.client.config;
+package com.fwloopins.yttrium.client.config;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
@@ -10,6 +10,6 @@ import net.fabricmc.api.Environment;
 public class ModMenuIntegration implements ModMenuApi {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
-        return parent -> AutoConfig.getConfigScreen(AmanitaConfig.class, parent).get();
+        return parent -> AutoConfig.getConfigScreen(YttriumConfig.class, parent).get();
     }
 }

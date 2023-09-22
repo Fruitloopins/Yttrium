@@ -1,6 +1,6 @@
-package com.fwloopins.amanita.client.mixin.spectatorcrosshair;
+package com.fwloopins.yttrium.client.mixin.spectatorcrosshair;
 
-import com.fwloopins.amanita.client.AmanitaClient;
+import com.fwloopins.yttrium.client.YttriumClient;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.util.hit.HitResult;
 import org.spongepowered.asm.mixin.Mixin;
@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class InGameHudMixin {
     @Inject(method = "shouldRenderSpectatorCrosshair", at = @At("RETURN"), cancellable = true)
     private void renderSpectatorCrosshair(HitResult hitResult, CallbackInfoReturnable<Boolean> cir) {
-        if (AmanitaClient.getConfig().general.spectatorCrosshair) {
+        if (YttriumClient.getConfig().tweaks.spectatorCrosshair) {
             cir.setReturnValue(true);
         }
     }

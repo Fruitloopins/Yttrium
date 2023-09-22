@@ -1,6 +1,6 @@
-package com.fwloopins.amanita.client.mixin.truexp;
+package com.fwloopins.yttrium.client.mixin.truexp;
 
-import com.fwloopins.amanita.client.AmanitaClient;
+import com.fwloopins.yttrium.client.YttriumClient;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameHud;
 import org.spongepowered.asm.mixin.Final;
@@ -15,7 +15,7 @@ public class InGameHudMixin {
 
     @ModifyVariable(method = "renderExperienceBar", at = @At("STORE"), ordinal = 0)
     private String modifyExperienceString(String experienceString) {
-        if (AmanitaClient.getConfig().general.trueXP) {
+        if (YttriumClient.getConfig().tweaks.trueXP) {
             assert client.player != null;
             return experienceString + " (" + client.player.totalExperience + ")";
         }

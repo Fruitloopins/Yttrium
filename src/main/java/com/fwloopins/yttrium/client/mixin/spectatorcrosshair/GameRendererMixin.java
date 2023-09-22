@@ -1,6 +1,6 @@
-package com.fwloopins.amanita.client.mixin.spectatorcrosshair;
+package com.fwloopins.yttrium.client.mixin.spectatorcrosshair;
 
-import com.fwloopins.amanita.client.AmanitaClient;
+import com.fwloopins.yttrium.client.YttriumClient;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.util.math.BlockPos;
@@ -18,7 +18,7 @@ public class GameRendererMixin {
 
     @Inject(method = "shouldRenderBlockOutline", at = @At("HEAD"), cancellable = true)
     private void renderSpectatorBlockOutline(CallbackInfoReturnable<Boolean> cir) {
-        if (AmanitaClient.getConfig().general.spectatorCrosshair) {
+        if (YttriumClient.getConfig().tweaks.spectatorCrosshair) {
             assert client.interactionManager != null;
             assert client.world != null;
             assert client.player != null;

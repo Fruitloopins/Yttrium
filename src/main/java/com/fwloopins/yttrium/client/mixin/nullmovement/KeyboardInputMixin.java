@@ -1,6 +1,6 @@
-package com.fwloopins.amanita.client.mixin.nullmovement;
+package com.fwloopins.yttrium.client.mixin.nullmovement;
 
-import com.fwloopins.amanita.client.AmanitaClient;
+import com.fwloopins.yttrium.client.YttriumClient;
 import net.minecraft.client.input.Input;
 import net.minecraft.client.input.KeyboardInput;
 import org.spongepowered.asm.mixin.Mixin;
@@ -15,7 +15,7 @@ public class KeyboardInputMixin extends Input {
 
     @Inject(method = "tick", at = @At("TAIL"))
     private void afterTick(boolean slowDown, float slowDownFactor, CallbackInfo ci) {
-        if (AmanitaClient.getConfig().general.nullMovement) {
+        if (YttriumClient.getConfig().tweaks.nullMovement) {
             boolean forward = pressingForward;
             boolean backward = pressingBack;
             boolean left = pressingLeft;
