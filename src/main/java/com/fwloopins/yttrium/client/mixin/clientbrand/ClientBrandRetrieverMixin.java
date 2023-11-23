@@ -9,6 +9,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ClientBrandRetriever.class)
 public class ClientBrandRetrieverMixin {
+
     @Inject(method = "getClientModName", at = @At("RETURN"), cancellable = true, remap = false)
     private static void modifyClientBrand(CallbackInfoReturnable<String> cir) {
         String clientBrand = YttriumClient.getConfig().tweaks.clientBrand;

@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(InGameHud.class)
 public class InGameHudMixin {
+
     @Inject(method = "shouldRenderSpectatorCrosshair", at = @At("RETURN"), cancellable = true)
     private void renderSpectatorCrosshair(HitResult hitResult, CallbackInfoReturnable<Boolean> cir) {
         if (YttriumClient.getConfig().tweaks.spectatorCrosshair) {
